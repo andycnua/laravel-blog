@@ -11,6 +11,10 @@
 |
 */
 
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function(){
+	Route::get('/admin', 'dashboard@Dashboard')->name('admin.index');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
